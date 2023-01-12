@@ -69,3 +69,14 @@ legend {
 .gigFort_questions_fieldset{
     margin-bottom: 3%;
 }
+
+button {
+    margin:1%;
+    width:20%;
+    font-family: 'SofiaPro';
+    background-color: #314c88;
+    color:white;
+    cursor: pointer;
+    border:none;
+    border-radius: 5px;
+}
