@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Helvetica;
+    src: url("./assets/HelveticaNeue-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'SofiaPro';
+    src: url("./assets/Sofia-Pro-Regular.otf") format("opentype");
+}
+
+body {
+    font-family: 'SofiaPro';
+}
