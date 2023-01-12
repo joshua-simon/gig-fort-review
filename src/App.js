@@ -2,174 +2,196 @@ import { useState } from 'react'
 import './styles.css'
 import android from './assets/android.png'
 import expand from './assets/expand.png'
+import gig_fort_logo from './assets/Gig_Fort_Logo_Gold_150x150.png'
 
 const App = () => {
 
 
+
+
   const form = <form>
 
-    <div>
-      <h1>Gig Fort  - A simple, comprehensive gig guide for live music in Poneke - Wellington</h1>
+    <div className='intro'>
+      <h1>Gig Fort App  -  Survey</h1>
       <h2>Kia Ora! Josh here.</h2>
       <p>I'm currently building a mobile app called Gig Fort, the aim of which is to provide a simple, comprehensive
-      gig guide for live music in Wellington. Because I want to build the best app possible, I'd love to get your feedback
-      on a prototype app I've built. So below is a survey with a few simple questions - please feel free to be as blunt as possible.
-
+      gig guide for live music in Wellington. <br></br> Because I want to build the best app possible, I'd love to get your feedback
+      on a prototype app I've built. So below is a survey with a few simple questions - please feel free to be as blunt as possible. <br></br>
       Thanks!
       </p>
     </div>
 
-    <div>
-    <h1>General questions</h1>
-      <fieldset>
-        <legend>How do you normally find out about live music in Wellington?</legend>
+    <div className='general-questions'>
+      <div>
+      <h2 className='heading'>General questions</h2>
+
+      {/* Question 1 */}
+        <fieldset className='general-questions_fieldset'>
+          <legend>1.) How do you normally find out about live music in Wellington?</legend>
+            <div>
+              <input type = "checkbox" name = "q1-facebook"/>
+              <label for = "q1-facebook">Facebook</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-Instagram"/>
+              <label for = "q1-Instagram">Instagram</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-The Image04"/>
+              <label for = "q1-The Image04">The Image04</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-Eventfinder"/>
+              <label for = "q1-Eventfinder">Eventfinder</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-underTheRadar"/>
+              <label for = "q1-underTheRadar">Under The Radar</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-venueWesbites"/>
+              <label for = "q1-venueWesbites">Venue Websites</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-wordOfMouth"/>
+              <label for = "q1-wordOfMouth">Word of mouth</label>
+            </div>
+            <div>
+              <input type = "checkbox" name = "q1-other"/>
+              <label for = "q1-other">Other (please specify):</label>
+              <input type = "text" name = "q1-other-long_answer"/>
+            </div>
+        </fieldset>
+      </div>
+
+     {/* Question 2 */}
+      <div>
+        <fieldset className='general-questions_fieldset'>
+          <legend>2.) Do the above gig guides make it easy to find what gigs are happening on a given night in Wellington? </legend>
           <div>
-            <input type = "checkbox" name = "facebook"/>
-            <label for = "facebook">Facebook</label>
+            <input type = "checkbox" name = "q2-yes"/>
+            <label for = "q2-yes">Yes</label>
           </div>
           <div>
-            <input type = "checkbox" name = "Instagram"/>
-            <label for = "Instagram">Instagram</label>
+            <input type = "checkbox" name = "q2-somewhat"/>
+            <label for = "q2-somewhat">Somewhat</label>
           </div>
           <div>
-            <input type = "checkbox" name = "The Image04"/>
-            <label for = "The Image04">The Image04</label>
+            <input type = "checkbox" name = "q2-no"/>
+            <label for = "q2-no">No</label>
+          </div>
+          <p>If you answered 'Somewhat' or 'no', what could be improved about current gig guides? For example, better user interface, improved user experience, 
+            a more comprehensive list of gigs
+          </p>
+          <textarea name = "q2-long_answer" rows="4" cols="50"/>
+        </fieldset>
+      </div>
+
+
+     {/* Question 3 */}
+      <div>
+        <fieldset className='general-questions_fieldset'>
+          <legend>
+           3.)  When do you normally make the decision to go to a gig?
+          </legend>
+          <div>
+            <input type = "checkbox" name = "q3-last-minute"/>
+            <label for = "q3-last-minute">In a spur-of-the-moment kind of way, by finding out what gigs are happening on the current day/night </label>
           </div>
           <div>
-            <input type = "checkbox" name = "Eventfinder"/>
-            <label for = "Eventfinder">Eventfinder</label>
+            <input type = "checkbox" name = "q3-plan-ahead"/>
+            <label for = "q3-plan-ahead">I like to plan out which gigs I'm going to ahead of time </label>
           </div>
           <div>
-            <input type = "checkbox" name = "underTheRadar"/>
-            <label for = "underTheRadar">Under The Radar</label>
+            <input type = "checkbox" name = "q3-both"/>
+            <label for = "q3-both">I go to gigs both as a last minute decision, and also sometimes as something I plan in advance </label>
           </div>
-          <div>
-            <input type = "checkbox" name = "venueWesbites"/>
-            <label for = "venueWesbites">Venue Websites</label>
-          </div>
-          <div>
-            <input type = "checkbox" name = "wordOfMouth"/>
-            <label for = "wordOfMouth">Word of mouth</label>
-          </div>
-          <div>
-            <input type = "checkbox" name = "other"/>
-            <label for = "other">Other (please specify):</label>
-            <input type = "text"/>
-          </div>
-      </fieldset>
+        </fieldset>
+      </div>
     </div>
 
-    <div>
-      <fieldset>
-        <legend>Do the above gig guides make it easy to find what gigs are happening on a given night in Wellington? </legend>
-        <div>
-          <input type = "checkbox" name = "yes"/>
-          <label for = "yes">Yes</label>
-        </div>
-        <div>
-          <input type = "checkbox" name = "sortOf"/>
-          <label for = "sortOf">Sort of</label>
-        </div>
-        <div>
-          <input type = "checkbox" name = "no"/>
-          <label for = "no">No</label>
-        </div>
-        <p>If you answered 'Sort of' or 'no', what could be improved about current gig guides? For example, better user interface, improved user experience, 
-          a more comprehensive list of gigs
-        </p>
-        <textarea/>
-      </fieldset>
-    </div>
 
-    <div>
-      <fieldset>
-        <legend>
-          How do you figure out which gigs you're going to attend?
-        </legend>
-        <div>
-          <input type = "checkbox" name = "last-minute"/>
-          <label for = "last-minute">In a spur-of-the-moment kind of way, by finding out what gigs are happening on the current day/night </label>
-        </div>
-        <div>
-          <input type = "checkbox" name = "plan-ahead"/>
-          <label for = "plan-ahead">I like to plan out which gigs I'm going to ahead of time </label>
-        </div>
-        <div>
-          <input type = "checkbox" name = "both"/>
-          <label for = "both">I go to gigs both as a last minute decision, and also sometimes as something I plan in advance </label>
-        </div>
-      </fieldset>
-    </div>
 
     <div className='gigFort_review_section'>
-        <h1>Gig Fort review</h1>
+        <h2 className='heading'>Gig Fort review</h2>
 
         <div className='instructions'>
           <p>This section will require you to review a demo of the Gig Fort app. To access the demo:</p>
-          <p>1. Go to the demo <a target="_blank" href = 'https://snack.expo.dev/@joshsimon/gig-fort---app-demo?platform=android' >website</a></p>
+          <p>i) Go to the demo <a target="_blank" href = 'https://snack.expo.dev/@joshsimon/gig-fort---app-demo?platform=android' >website</a></p>
             <div className='instructions_textAndImage'>
-              <p>2. Once in the demo, click on the "Android" button in the right hand panel:</p>
+              <p>ii) Once in the demo, click on the "Android" button in the right hand panel:</p>
               <img src = {android}/>
             </div>
             <div className='instructions_textAndImage'>
-              <p>3. Click on the expand icon:</p>
+              <p>iii) Click on the expand icon:</p>
               <img src = {expand}/>
             </div>
-            <p>4. Click the "Tap to play" button to run app</p>
+            <p>iv) Click the "Tap to play" button to run app</p>
         </div>
 
         <div className='gigFort_review_form'>
-          <fieldset>
-              <legend>Upon opening the app, you'll see a map showing the location of gigs. Is this map easy to understand and navigate?</legend>
+
+           {/* Question 4 */}
+          <fieldset className='gigFort_questions_fieldset'>
+              <legend>4.) Upon opening the app, you'll see a map showing the location of gigs. Is this map easy to understand and navigate?</legend>
               <div>
-                <input type = "checkbox" name = "yes"/>
-                <label for = "yes">Yes</label>
+                <input type = "checkbox" name = "q4-yes"/>
+                <label for = "q4-yes">Yes</label>
               </div>
               <div>
-                <input type = "checkbox" name = "somewhat"/>
-                <label for = "somewhat">Somewhat</label>
+                <input type = "checkbox" name = "q4-somewhat"/>
+                <label for = "q4-somewhat">Somewhat</label>
               </div>
               <div>
-                <input type = "checkbox" name = "no"/>
-                <label for = "no">No</label>
+                <input type = "checkbox" name = "q4-no"/>
+                <label for = "q4-no">No</label>
               </div>
           </fieldset>
-          <fieldset>
+
+          {/* Question 5 */}
+          <fieldset className='gigFort_questions_fieldset'>
             <legend>
-              Navigate to the gig list page by tapping the the 'List View' at the bottom of the map page.
+             5.)  Navigate to the gig list page by tapping the the 'List View' at the bottom of the map page.
               Is the list view easy to understand and navigate? If not, is there anything you'd change about it?
               Please enter answer below:
             </legend>
-            <textarea/>
+            <textarea name = "q5-map_long_answer" rows="4" cols="50"/>
           </fieldset>
-          <fieldset>
+
+          {/* Question 6 */}
+          <fieldset className='gigFort_questions_fieldset'>
             <legend>
-              Do you prefer the gig map or gig list as a way of displaying gigs?
+             6.)  Do you prefer the gig map or gig list as a way of displaying gigs?
             </legend>
             <div>
-                <input type = "checkbox" name = "map"/>
-                <label for = "map">Map</label>
+                <input type = "checkbox" name = "q6-map"/>
+                <label for = "q6-map">Map</label>
             </div>
             <div>
-                <input type = "checkbox" name = "list"/>
-                <label for = "list">List</label>
+                <input type = "checkbox" name = "q6-list"/>
+                <label for = "q6-list">List</label>
             </div>
             <div>
-                <input type = "checkbox" name = "both"/>
-                <label for = "both">Both, depending on the circumstance</label>
+                <input type = "checkbox" name = "q6-both"/>
+                <label for = "q6-both">Both, depending on the circumstance</label>
             </div>               
           </fieldset>
-          <fieldset>
+
+          {/* Question 7 */}
+          <fieldset className='gigFort_questions_fieldset'>
             <legend>
-              Is there anything about Gig Fort that made it difficult to understand or navigate?
+             7.)  Is there anything about Gig Fort that made it difficult to understand or navigate?
               Please enter answer below:
             </legend>
-            <textarea/>
+            <textarea name = "q7-long_answer" rows="4" cols="50"/>
           </fieldset>
-          <fieldset>
-            <legend>Are there any other functionalities you'd like to see added to Gig Fort?
+
+          {/* Question 8 */}
+          <fieldset className='gigFort_questions_fieldset'>
+            <legend> 8.) Are there any other functionalities you'd like to see added to Gig Fort?
               For example: Filtering gigs by whether they're free or not, the ability to connect with other users, and so on...
             </legend>
+            <textarea name = "q8-long_answer" rows="4" cols="50"/>
           </fieldset>
         </div>
 
@@ -189,6 +211,7 @@ const App = () => {
 
   return (
     <div>
+    <header> <img src = {gig_fort_logo}/></header>
       {form}
     </div>
   );

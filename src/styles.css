@@ -9,5 +9,63 @@
 }
 
 body {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
     font-family: 'SofiaPro';
+    background-color: #BB9456;
+    color: #2f4f4f
+}
+
+form {
+    background-color: white;
+    padding:2%;
+    border-radius: 5px;
+}
+
+header {
+    text-align: center;
+}
+
+img {
+    height:30%;
+    width:30%;
+}
+
+.heading {
+    text-decoration: underline;
+}
+
+.intro {
+    border-bottom: 1px solid gray;
+    margin-bottom: 8%;
+}
+
+legend {
+   font-weight: bolder;
+}
+
+.general-questions_fieldset {
+    margin-bottom: 3%;
+}
+
+.general-questions {
+    margin-bottom: 5%;
+}
+
+.instructions_textAndImage {
+    margin-bottom:5%;
+}
+
+.instructions_textAndImage img {
+    height:15%;
+    width:15%
+}
+
+.instructions {
+    margin-bottom: 5%;
+}
+
+.gigFort_questions_fieldset{
+    margin-bottom: 3%;
 }
